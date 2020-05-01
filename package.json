@@ -1,0 +1,28 @@
+{
+  "name": "unifypass",
+  "version": "1.0.0",
+  "description": "UnifyPass es una aplicación tipo 1password para administrar tus constraseñas",
+  "bin": "index.js",
+  "scripts": {
+    "lint": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OEUSSE/unifypass.git"
+  },
+  "keywords": [],
+  "author": "Óscar Eusse - scr.eusse@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OEUSSE/unifypass/issues"
+  },
+  "homepage": "https://github.com/OEUSSE/unifypass#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "minimist": "^1.2.5",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.3"
+  }
+}
