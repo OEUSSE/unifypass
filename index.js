@@ -3,21 +3,23 @@
 'use strict'
 
 const minimist = require('minimist')
-const { createDb } = require('./lib/db')
+const { createDb } = require('./lib')
 
 const argv = minimist(process.argv.slice(2))
 
 async function main () {
-    const db = await createDb()
+    const db = await createDb('sqlite')
     const command = argv._.shift()
 
     switch (command) {
         case 'users:create':
             try {
-                const { user, pass } = argv
+                let { user, pass } = argv
+                pass = typeof pass != 'string' ? pass.toString() : pass
                 await db.createUser(user, pass)
                 console.log(`User ${user} created`)
             } catch (error) {
+                console.log(error)
                 throw new Error('Cannot create user')
             }
             break
